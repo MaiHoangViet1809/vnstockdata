@@ -169,7 +169,7 @@ class StockService:
 
 
 @timeit_ns
-def save_historical_data(symbol: str, base_path: str = "./data", stock_service: StockService = None, **kwargs):
+def save_historical_data(symbol: str, base_path: str = "./data", stock_service: StockService = None, dry_run = False, **kwargs):
     if not stock_service:
         stock_service = StockService()
 
@@ -184,20 +184,26 @@ def save_historical_data(symbol: str, base_path: str = "./data", stock_service: 
             if df_out.size > 0:
                 print_table(df_out, 3)
                 output_path = f"{base_path}/{symbol}"
-                run_sh(f"rm -rf {output_path}/stock_date={d.strftime('%Y-%m-%d')}")
-                df_write = pl.from_pandas(df_out)
-                df_write.write_parquet(file=output_path, partition_by=["stock_date"])
+
+                if not dry_run:
+                    run_sh(f"rm -rf {output_path}/stock_date={d.strftime('%Y-%m-%d')}")
+                    df_write = pl.from_pandas(df_out)
+                    df_write.write_parquet(file=output_path, partition_by=["stock_date"])
+                else:
+                    print(f"[DRY RUN] rm -rf {output_path}/stock_date={d.strftime('%Y-%m-%d')}")
+                    print(f"[DRU RUN] saving data to {output_path=}")
+
                 print("-" * 20, "FINISH", d, "-" * 20)
 
 
 # Usage:
 if __name__ == "__main__":
     from dateutil.relativedelta import relativedelta
-    from trading.helper.date_calculate import third_thursday
+    from helper.date_calculate import third_thursday
     from time import sleep
 
-    start_month = datetime(2024, 1, 1)
-    end_month = datetime(2025, 5, 9, hour=15)
+    start_month = datetime(2025, 6, 1)
+    end_month = datetime(2025, 6, 6, hour=15)
     curr_month = start_month
 
     while curr_month <= end_month:
@@ -218,6 +224,7 @@ if __name__ == "__main__":
                     symbol=symbol,
                     dt_from=curr_date,
                     dt_to=curr_date + relativedelta(hours=23),
+                    dry_run=True,
                 )
                 sleep(0.001)
 

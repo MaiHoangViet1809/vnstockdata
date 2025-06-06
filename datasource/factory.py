@@ -4,7 +4,7 @@ from datasource.base import DataSource
 
 
 def datasource_builder(
-    root_path: str = "/Users/maihoangviet/Projects/PlayGround/trading/data",
+    root_path: str = "../data",
     use_cache: bool = True,
 ) -> DataSource:
     """Instantiate a DataSource (Parquet + optional caching)."""
