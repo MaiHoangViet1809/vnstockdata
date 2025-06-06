@@ -3,4 +3,4 @@ httpx
 pandas==2.2.3
 fake-useragent
 wrapt
-schedule
+APScheduler

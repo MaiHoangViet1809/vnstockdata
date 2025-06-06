@@ -10,6 +10,7 @@ from utils.debug import print_table
 from utils.timing import timeit_ns
 from utils.shells import run_sh
 from helper.agent import get_headers
+from helper.date_calculate import now
 
 logger = logging.getLogger(__name__)
 
@@ -176,6 +177,7 @@ def save_historical_data(symbol: str, base_path: str = "./data", stock_service: 
     df_candle = stock_service.get_candle(symbol=symbol, **kwargs)
     if df_candle is not None:
         df_candle["stock_date"] = df_candle["t"].dt.date
+        df_candle["snapshot_dttm"] = now()
 
         list_date = df_candle["stock_date"].unique().tolist()
         for d in list_date:
@@ -195,46 +197,46 @@ def save_historical_data(symbol: str, base_path: str = "./data", stock_service: 
 
                 print("-" * 20, "FINISH", d, "-" * 20)
 
-
-# Usage:
-if __name__ == "__main__":
-    from dateutil.relativedelta import relativedelta
-    from helper.date_calculate import third_thursday
-    from time import sleep
-
-    start_month = datetime(2025, 6, 1)
-    end_month = datetime(2025, 6, 6, hour=15)
-    curr_month = start_month
-
-    while curr_month <= end_month:
-        name_part = curr_month.strftime("%y%m")
-        symbol = f"VN30F{name_part}"
-
-        print("-", curr_month.strftime("%Y-%m"), "-" * 10)
-        prev_month = curr_month + relativedelta(months=-1)
-
-        start_date = third_thursday(prev_month.year, prev_month.month) + relativedelta(days=1)
-        end_date = third_thursday(curr_month.year, curr_month.month) + relativedelta(days=0)
-        curr_date = start_date
-
-        while curr_date <= end_date:
-            if curr_date.weekday() < 5:
-                print("--", curr_date.strftime("%Y-%m-%d"), "-" * 10)
-                save_historical_data(
-                    symbol=symbol,
-                    dt_from=curr_date,
-                    dt_to=curr_date + relativedelta(hours=23),
-                    dry_run=True,
-                )
-                sleep(0.001)
-
-            curr_date += relativedelta(days=1)
-
-        # try new month
-        curr_month += relativedelta(months=1)
-
-    # 1739898000 -- 1739898000
-    # 1742922000 -- 1742835600
-    # Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30F2505'], 'from': 1739898000, 'to': 1740762000}
-    # Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30F2503'], 'from': 1739898000, 'to': 1742922000}
+#
+# # Usage:
+# if __name__ == "__main__":
+#     from dateutil.relativedelta import relativedelta
+#     from helper.date_calculate import third_thursday
+#     from time import sleep
+#
+#     start_month = datetime(2025, 6, 1)
+#     end_month = datetime(2025, 6, 6, hour=15)
+#     curr_month = start_month
+#
+#     while curr_month <= end_month:
+#         name_part = curr_month.strftime("%y%m")
+#         symbol = f"VN30F{name_part}"
+#
+#         print("-", curr_month.strftime("%Y-%m"), "-" * 10)
+#         prev_month = curr_month + relativedelta(months=-1)
+#
+#         start_date = third_thursday(prev_month.year, prev_month.month) + relativedelta(days=1)
+#         end_date = third_thursday(curr_month.year, curr_month.month) + relativedelta(days=0)
+#         curr_date = start_date
+#
+#         while curr_date <= end_date:
+#             if curr_date.weekday() < 5:
+#                 print("--", curr_date.strftime("%Y-%m-%d"), "-" * 10)
+#                 save_historical_data(
+#                     symbol=symbol,
+#                     dt_from=curr_date,
+#                     dt_to=curr_date + relativedelta(hours=23),
+#                     dry_run=True,
+#                 )
+#                 sleep(0.001)
+#
+#             curr_date += relativedelta(days=1)
+#
+#         # try new month
+#         curr_month += relativedelta(months=1)
+#
+#     # 1739898000 -- 1739898000
+#     # 1742922000 -- 1742835600
+#     # Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30F2505'], 'from': 1739898000, 'to': 1740762000}
+#     # Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30F2503'], 'from': 1739898000, 'to': 1742922000}
 

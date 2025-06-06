@@ -18,7 +18,13 @@ class DownloadStock:
         return self.symbol
 
     @timeit_ns # noqa
-    def download(self):
+    def download(self, from_date_yyyymmdd: str = None, to_date_yyyymmdd: str = None):
+        if from_date_yyyymmdd:
+            self.start_date = datetime.strptime(from_date_yyyymmdd, "%Y%m%d")
+
+        if to_date_yyyymmdd:
+            self.end_date = datetime.strptime(to_date_yyyymmdd, "%Y%m%d")
+
         curr_date = self.start_date
         while curr_date <= self.end_date:
             print("-", curr_date.strftime("%Y-%m"), "-" * 10)
@@ -52,7 +58,13 @@ class DownloadVN30F(DownloadStock):
         return f"VN30F{name_part}"
 
     @timeit_ns # noqa
-    def download(self):
+    def download(self, from_date_yyyymmdd: str = None, to_date_yyyymmdd: str = None):
+        if from_date_yyyymmdd:
+            self.start_date = datetime.strptime(from_date_yyyymmdd, "%Y%m%d")
+
+        if to_date_yyyymmdd:
+            self.end_date = datetime.strptime(to_date_yyyymmdd, "%Y%m%d")
+
         curr_month = self.start_date
         while curr_month <= self.end_date:
             print("-", curr_month.strftime("%Y-%m"), "-" * 10)
@@ -80,7 +92,7 @@ class DownloadStockFactory:
             case _:
                 self.engine = DownloadStock(symbol=symbol, dry_run=dry_run, **kwargs)
 
-    def download(self):
+    def download(self, **kwargs):
         self.engine.download()
 
 
