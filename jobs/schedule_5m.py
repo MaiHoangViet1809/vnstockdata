@@ -17,6 +17,7 @@ git_helper = GitPusher(repo_path="..")
 
 
 def get_data_today():
+    git_helper.pull()
     run_dttm = datetime.now().strftime("%Y%m%d")
     src_VN30F.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
     src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
