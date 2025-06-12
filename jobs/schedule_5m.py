@@ -74,19 +74,19 @@ if __name__ == "__main__":
         timezone=vn_tz
     )
 
-    print("--ADD JOBS----------------------------------------------")
+    log.info("--ADD JOBS----------------------------------------------")
     scheduler.add_job(run_task, trigger_early, id="job_08_early", replace_existing=True)
     scheduler.add_job(run_task, trigger_midday, id="job_09_13_mid", replace_existing=True)
     scheduler.add_job(run_task, trigger_late, id="job_14_late", replace_existing=True)
     scheduler.start()
 
-    print("------------------------------------------------")
+    log.info("------------------------------------------------")
     for job in scheduler.get_jobs():
-        print(f"{job.id}: next run at {job.next_run_time}")
+        log.info(f"{job.id}: next run at {job.next_run_time}")
 
     try:
         while True:
             time.sleep(1)
     except (KeyboardInterrupt, SystemExit):
         scheduler.shutdown()
-        print("Scheduler shut down gracefully")
+        log.info("Scheduler shut down gracefully")
