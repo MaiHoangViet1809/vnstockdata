@@ -1,22 +1,39 @@
 from pytz import timezone
 import time
 from pathlib import Path
+import logging
+from datetime import datetime
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 from apscheduler.triggers.cron import CronTrigger
 
+from helper.date_calculate import now
 from utils.shells import run_sh
+
+# ── 1. Log to stdout so nohup >> scheduler.log captures it ──
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+log = logging.getLogger(__name__)
+
+# ── 2. Task wrapper with visible output ──
+BASE_DIR = Path(__file__).resolve().parent
+SCRIPT    = BASE_DIR / "tasks" / "update_stock_price_5m.py"
 
 
 def run_task():
+    log.info("===> run_task started (%s)", now().isoformat(timespec="seconds"))
     try:
-        base_dir = Path(__file__).resolve().parent
-        script = base_dir / "tasks" / "update_stock_price_5m.py"
-        run_sh(command=f"python3.10 {script.as_posix()}")
+        if not SCRIPT.exists():
+            raise FileNotFoundError(f"{SCRIPT} not found")
+        run_sh(command=f"python3.10 {SCRIPT}")
+        log.info("run_task finished OK")
     except Exception as e:
-        print("run_task failed: %s", e)
+        log.exception("run_task failed: %s", e)
 
 
 if __name__ == "__main__":
@@ -61,6 +78,9 @@ if __name__ == "__main__":
     scheduler.add_job(run_task, trigger_midday, id="job_09_13_mid", replace_existing=True)
     scheduler.add_job(run_task, trigger_late, id="job_14_late", replace_existing=True)
     scheduler.start()
+
+    for job in scheduler.get_jobs():
+        print(f"{job.id}: next run at {job.next_run_time}")
 
     try:
         while True:
