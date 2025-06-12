@@ -74,11 +74,13 @@ if __name__ == "__main__":
         timezone=vn_tz
     )
 
+    print("--ADD JOBS----------------------------------------------")
     scheduler.add_job(run_task, trigger_early, id="job_08_early", replace_existing=True)
     scheduler.add_job(run_task, trigger_midday, id="job_09_13_mid", replace_existing=True)
     scheduler.add_job(run_task, trigger_late, id="job_14_late", replace_existing=True)
     scheduler.start()
 
+    print("------------------------------------------------")
     for job in scheduler.get_jobs():
         print(f"{job.id}: next run at {job.next_run_time}")
 
