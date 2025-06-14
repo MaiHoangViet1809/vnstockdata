@@ -1,0 +1,330 @@
+2025-06-09 22:15:35 ----------------------- START schedule_5m.py ----------------------------
+nohup: ignoring input
+/usr/lib/python3.10/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+2025-06-13 02:09:42 ----------------------- START schedule_5m.py ----------------------------
+2025-06-13 02:09:43 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-13 02:09:43 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-13 02:09:43 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-13 02:09:43 [INFO] apscheduler.scheduler: Added job "run_task" to job store "default"
+2025-06-13 02:09:43 [INFO] apscheduler.scheduler: Added job "run_task" to job store "default"
+2025-06-13 02:09:43 [INFO] apscheduler.scheduler: Added job "run_task" to job store "default"
+2025-06-13 02:09:43 [INFO] apscheduler.scheduler: Scheduler started
+/usr/lib/python3.10/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+2025-06-13 02:13:51 ----------------------- START schedule_5m.py ----------------------------
+2025-06-13 02:13:51 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-13 02:13:51 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-13 02:13:51 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-13 02:13:51 [INFO] apscheduler.scheduler: Added job "run_task" to job store "default"
+2025-06-13 02:13:51 [INFO] apscheduler.scheduler: Added job "run_task" to job store "default"
+2025-06-13 02:13:51 [INFO] apscheduler.scheduler: Added job "run_task" to job store "default"
+2025-06-13 02:13:51 [INFO] apscheduler.scheduler: Scheduler started
+2025-06-13 02:19:45 ----------------------- START schedule_5m.py ----------------------------
+/usr/lib/python3.10/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+nohup: ignoring input
+2025-06-13 02:19:48 [INFO] __main__: --ADD JOBS----------------------------------------------
+2025-06-13 02:19:48 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-13 02:19:48 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-13 02:19:48 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-13 02:19:48 [INFO] apscheduler.scheduler: Added job "run_task" to job store "default"
+2025-06-13 02:19:48 [INFO] apscheduler.scheduler: Added job "run_task" to job store "default"
+2025-06-13 02:19:48 [INFO] apscheduler.scheduler: Added job "run_task" to job store "default"
+2025-06-13 02:19:48 [INFO] apscheduler.scheduler: Scheduler started
+2025-06-13 02:19:48 [INFO] __main__: ------------------------------------------------
+2025-06-13 02:19:48 [INFO] __main__: job_08_early: next run at 2025-06-13 08:45:00+07:00
+2025-06-13 02:19:48 [INFO] __main__: job_09_13_mid: next run at 2025-06-13 09:00:00+07:00
+2025-06-13 02:19:48 [INFO] __main__: job_14_late: next run at 2025-06-13 14:00:00+07:00
+2025-06-13 08:45:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='8', minute='45,50,55'], next run at: 2025-06-13 08:45:00 +07)" (scheduled at 2025-06-13 08:45:00+07:00)
+2025-06-13 08:45:00 [INFO] __main__: ===> run_task started (2025-06-13T08:45:00+07:00)
+2025-06-13 08:45:00 [INFO] __main__: run_task finished OK
+2025-06-13 08:45:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='8', minute='45,50,55'], next run at: 2025-06-13 08:50:00 +07)" executed successfully
+2025-06-13 08:50:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='8', minute='45,50,55'], next run at: 2025-06-13 08:55:00 +07)" (scheduled at 2025-06-13 08:50:00+07:00)
+2025-06-13 08:50:00 [INFO] __main__: ===> run_task started (2025-06-13T08:50:00+07:00)
+2025-06-13 08:50:00 [INFO] __main__: run_task finished OK
+2025-06-13 08:50:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='8', minute='45,50,55'], next run at: 2025-06-13 08:55:00 +07)" executed successfully
+2025-06-13 08:55:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='8', minute='45,50,55'], next run at: 2025-06-16 08:45:00 +07)" (scheduled at 2025-06-13 08:55:00+07:00)
+2025-06-13 08:55:00 [INFO] __main__: ===> run_task started (2025-06-13T08:55:00+07:00)
+2025-06-13 08:55:00 [INFO] __main__: run_task finished OK
+2025-06-13 08:55:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='8', minute='45,50,55'], next run at: 2025-06-16 08:45:00 +07)" executed successfully
+2025-06-13 09:00:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:05:00 +07)" (scheduled at 2025-06-13 09:00:00+07:00)
+2025-06-13 09:00:00 [INFO] __main__: ===> run_task started (2025-06-13T09:00:00+07:00)
+2025-06-13 09:00:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:00:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:05:00 +07)" executed successfully
+2025-06-13 09:05:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:10:00 +07)" (scheduled at 2025-06-13 09:05:00+07:00)
+2025-06-13 09:05:00 [INFO] __main__: ===> run_task started (2025-06-13T09:05:00+07:00)
+2025-06-13 09:05:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:05:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:10:00 +07)" executed successfully
+2025-06-13 09:10:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:15:00 +07)" (scheduled at 2025-06-13 09:10:00+07:00)
+2025-06-13 09:10:00 [INFO] __main__: ===> run_task started (2025-06-13T09:10:00+07:00)
+2025-06-13 09:10:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:10:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:15:00 +07)" executed successfully
+2025-06-13 09:15:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:20:00 +07)" (scheduled at 2025-06-13 09:15:00+07:00)
+2025-06-13 09:15:00 [INFO] __main__: ===> run_task started (2025-06-13T09:15:00+07:00)
+2025-06-13 09:15:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:15:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:20:00 +07)" executed successfully
+2025-06-13 09:20:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:25:00 +07)" (scheduled at 2025-06-13 09:20:00+07:00)
+2025-06-13 09:20:00 [INFO] __main__: ===> run_task started (2025-06-13T09:20:00+07:00)
+2025-06-13 09:20:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:20:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:25:00 +07)" executed successfully
+2025-06-13 09:25:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:30:00 +07)" (scheduled at 2025-06-13 09:25:00+07:00)
+2025-06-13 09:25:00 [INFO] __main__: ===> run_task started (2025-06-13T09:25:00+07:00)
+2025-06-13 09:25:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:25:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:30:00 +07)" executed successfully
+2025-06-13 09:30:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:35:00 +07)" (scheduled at 2025-06-13 09:30:00+07:00)
+2025-06-13 09:30:00 [INFO] __main__: ===> run_task started (2025-06-13T09:30:00+07:00)
+2025-06-13 09:30:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:30:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:35:00 +07)" executed successfully
+2025-06-13 09:35:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:40:00 +07)" (scheduled at 2025-06-13 09:35:00+07:00)
+2025-06-13 09:35:00 [INFO] __main__: ===> run_task started (2025-06-13T09:35:00+07:00)
+2025-06-13 09:35:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:35:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:40:00 +07)" executed successfully
+2025-06-13 09:40:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:45:00 +07)" (scheduled at 2025-06-13 09:40:00+07:00)
+2025-06-13 09:40:00 [INFO] __main__: ===> run_task started (2025-06-13T09:40:00+07:00)
+2025-06-13 09:40:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:40:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:45:00 +07)" executed successfully
+2025-06-13 09:45:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:50:00 +07)" (scheduled at 2025-06-13 09:45:00+07:00)
+2025-06-13 09:45:00 [INFO] __main__: ===> run_task started (2025-06-13T09:45:00+07:00)
+2025-06-13 09:45:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:45:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:50:00 +07)" executed successfully
+2025-06-13 09:50:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:55:00 +07)" (scheduled at 2025-06-13 09:50:00+07:00)
+2025-06-13 09:50:00 [INFO] __main__: ===> run_task started (2025-06-13T09:50:00+07:00)
+2025-06-13 09:50:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:50:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 09:55:00 +07)" executed successfully
+2025-06-13 09:55:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:00:00 +07)" (scheduled at 2025-06-13 09:55:00+07:00)
+2025-06-13 09:55:00 [INFO] __main__: ===> run_task started (2025-06-13T09:55:00+07:00)
+2025-06-13 09:55:00 [INFO] __main__: run_task finished OK
+2025-06-13 09:55:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:00:00 +07)" executed successfully
+2025-06-13 10:00:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:05:00 +07)" (scheduled at 2025-06-13 10:00:00+07:00)
+2025-06-13 10:00:00 [INFO] __main__: ===> run_task started (2025-06-13T10:00:00+07:00)
+2025-06-13 10:00:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:00:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:05:00 +07)" executed successfully
+2025-06-13 10:05:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:10:00 +07)" (scheduled at 2025-06-13 10:05:00+07:00)
+2025-06-13 10:05:00 [INFO] __main__: ===> run_task started (2025-06-13T10:05:00+07:00)
+2025-06-13 10:05:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:05:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:10:00 +07)" executed successfully
+2025-06-13 10:10:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:15:00 +07)" (scheduled at 2025-06-13 10:10:00+07:00)
+2025-06-13 10:10:00 [INFO] __main__: ===> run_task started (2025-06-13T10:10:00+07:00)
+2025-06-13 10:10:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:10:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:15:00 +07)" executed successfully
+2025-06-13 10:15:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:20:00 +07)" (scheduled at 2025-06-13 10:15:00+07:00)
+2025-06-13 10:15:00 [INFO] __main__: ===> run_task started (2025-06-13T10:15:00+07:00)
+2025-06-13 10:15:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:15:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:20:00 +07)" executed successfully
+2025-06-13 10:20:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:25:00 +07)" (scheduled at 2025-06-13 10:20:00+07:00)
+2025-06-13 10:20:00 [INFO] __main__: ===> run_task started (2025-06-13T10:20:00+07:00)
+2025-06-13 10:20:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:20:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:25:00 +07)" executed successfully
+2025-06-13 10:25:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:30:00 +07)" (scheduled at 2025-06-13 10:25:00+07:00)
+2025-06-13 10:25:00 [INFO] __main__: ===> run_task started (2025-06-13T10:25:00+07:00)
+2025-06-13 10:25:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:25:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:30:00 +07)" executed successfully
+2025-06-13 10:30:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:35:00 +07)" (scheduled at 2025-06-13 10:30:00+07:00)
+2025-06-13 10:30:00 [INFO] __main__: ===> run_task started (2025-06-13T10:30:00+07:00)
+2025-06-13 10:30:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:30:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:35:00 +07)" executed successfully
+2025-06-13 10:35:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:40:00 +07)" (scheduled at 2025-06-13 10:35:00+07:00)
+2025-06-13 10:35:00 [INFO] __main__: ===> run_task started (2025-06-13T10:35:00+07:00)
+2025-06-13 10:35:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:35:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:40:00 +07)" executed successfully
+2025-06-13 10:40:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:45:00 +07)" (scheduled at 2025-06-13 10:40:00+07:00)
+2025-06-13 10:40:00 [INFO] __main__: ===> run_task started (2025-06-13T10:40:00+07:00)
+2025-06-13 10:40:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:40:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:45:00 +07)" executed successfully
+2025-06-13 10:45:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:50:00 +07)" (scheduled at 2025-06-13 10:45:00+07:00)
+2025-06-13 10:45:00 [INFO] __main__: ===> run_task started (2025-06-13T10:45:00+07:00)
+2025-06-13 10:45:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:45:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:50:00 +07)" executed successfully
+2025-06-13 10:50:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:55:00 +07)" (scheduled at 2025-06-13 10:50:00+07:00)
+2025-06-13 10:50:00 [INFO] __main__: ===> run_task started (2025-06-13T10:50:00+07:00)
+2025-06-13 10:50:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:50:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 10:55:00 +07)" executed successfully
+2025-06-13 10:55:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:00:00 +07)" (scheduled at 2025-06-13 10:55:00+07:00)
+2025-06-13 10:55:00 [INFO] __main__: ===> run_task started (2025-06-13T10:55:00+07:00)
+2025-06-13 10:55:00 [INFO] __main__: run_task finished OK
+2025-06-13 10:55:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:00:00 +07)" executed successfully
+2025-06-13 11:00:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:05:00 +07)" (scheduled at 2025-06-13 11:00:00+07:00)
+2025-06-13 11:00:00 [INFO] __main__: ===> run_task started (2025-06-13T11:00:00+07:00)
+2025-06-13 11:00:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:00:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:05:00 +07)" executed successfully
+2025-06-13 11:05:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:10:00 +07)" (scheduled at 2025-06-13 11:05:00+07:00)
+2025-06-13 11:05:00 [INFO] __main__: ===> run_task started (2025-06-13T11:05:00+07:00)
+2025-06-13 11:05:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:05:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:10:00 +07)" executed successfully
+2025-06-13 11:10:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:15:00 +07)" (scheduled at 2025-06-13 11:10:00+07:00)
+2025-06-13 11:10:00 [INFO] __main__: ===> run_task started (2025-06-13T11:10:00+07:00)
+2025-06-13 11:10:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:10:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:15:00 +07)" executed successfully
+2025-06-13 11:15:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:20:00 +07)" (scheduled at 2025-06-13 11:15:00+07:00)
+2025-06-13 11:15:00 [INFO] __main__: ===> run_task started (2025-06-13T11:15:00+07:00)
+2025-06-13 11:15:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:15:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:20:00 +07)" executed successfully
+2025-06-13 11:20:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:25:00 +07)" (scheduled at 2025-06-13 11:20:00+07:00)
+2025-06-13 11:20:00 [INFO] __main__: ===> run_task started (2025-06-13T11:20:00+07:00)
+2025-06-13 11:20:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:20:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:25:00 +07)" executed successfully
+2025-06-13 11:25:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:30:00 +07)" (scheduled at 2025-06-13 11:25:00+07:00)
+2025-06-13 11:25:00 [INFO] __main__: ===> run_task started (2025-06-13T11:25:00+07:00)
+2025-06-13 11:25:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:25:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:30:00 +07)" executed successfully
+2025-06-13 11:30:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:35:00 +07)" (scheduled at 2025-06-13 11:30:00+07:00)
+2025-06-13 11:30:00 [INFO] __main__: ===> run_task started (2025-06-13T11:30:00+07:00)
+2025-06-13 11:30:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:30:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:35:00 +07)" executed successfully
+2025-06-13 11:35:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:40:00 +07)" (scheduled at 2025-06-13 11:35:00+07:00)
+2025-06-13 11:35:00 [INFO] __main__: ===> run_task started (2025-06-13T11:35:00+07:00)
+2025-06-13 11:35:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:35:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:40:00 +07)" executed successfully
+2025-06-13 11:40:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:45:00 +07)" (scheduled at 2025-06-13 11:40:00+07:00)
+2025-06-13 11:40:00 [INFO] __main__: ===> run_task started (2025-06-13T11:40:00+07:00)
+2025-06-13 11:40:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:40:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:45:00 +07)" executed successfully
+2025-06-13 11:45:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:50:00 +07)" (scheduled at 2025-06-13 11:45:00+07:00)
+2025-06-13 11:45:00 [INFO] __main__: ===> run_task started (2025-06-13T11:45:00+07:00)
+2025-06-13 11:45:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:45:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:50:00 +07)" executed successfully
+2025-06-13 11:50:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:55:00 +07)" (scheduled at 2025-06-13 11:50:00+07:00)
+2025-06-13 11:50:00 [INFO] __main__: ===> run_task started (2025-06-13T11:50:00+07:00)
+2025-06-13 11:50:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:50:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 11:55:00 +07)" executed successfully
+2025-06-13 11:55:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:00:00 +07)" (scheduled at 2025-06-13 11:55:00+07:00)
+2025-06-13 11:55:00 [INFO] __main__: ===> run_task started (2025-06-13T11:55:00+07:00)
+2025-06-13 11:55:00 [INFO] __main__: run_task finished OK
+2025-06-13 11:55:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:00:00 +07)" executed successfully
+2025-06-13 12:00:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:05:00 +07)" (scheduled at 2025-06-13 12:00:00+07:00)
+2025-06-13 12:00:00 [INFO] __main__: ===> run_task started (2025-06-13T12:00:00+07:00)
+2025-06-13 12:00:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:00:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:05:00 +07)" executed successfully
+2025-06-13 12:05:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:10:00 +07)" (scheduled at 2025-06-13 12:05:00+07:00)
+2025-06-13 12:05:00 [INFO] __main__: ===> run_task started (2025-06-13T12:05:00+07:00)
+2025-06-13 12:05:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:05:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:10:00 +07)" executed successfully
+2025-06-13 12:10:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:15:00 +07)" (scheduled at 2025-06-13 12:10:00+07:00)
+2025-06-13 12:10:00 [INFO] __main__: ===> run_task started (2025-06-13T12:10:00+07:00)
+2025-06-13 12:10:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:10:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:15:00 +07)" executed successfully
+2025-06-13 12:15:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:20:00 +07)" (scheduled at 2025-06-13 12:15:00+07:00)
+2025-06-13 12:15:00 [INFO] __main__: ===> run_task started (2025-06-13T12:15:00+07:00)
+2025-06-13 12:15:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:15:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:20:00 +07)" executed successfully
+2025-06-13 12:20:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:25:00 +07)" (scheduled at 2025-06-13 12:20:00+07:00)
+2025-06-13 12:20:00 [INFO] __main__: ===> run_task started (2025-06-13T12:20:00+07:00)
+2025-06-13 12:20:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:20:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:25:00 +07)" executed successfully
+2025-06-13 12:25:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:30:00 +07)" (scheduled at 2025-06-13 12:25:00+07:00)
+2025-06-13 12:25:00 [INFO] __main__: ===> run_task started (2025-06-13T12:25:00+07:00)
+2025-06-13 12:25:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:25:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:30:00 +07)" executed successfully
+2025-06-13 12:30:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:35:00 +07)" (scheduled at 2025-06-13 12:30:00+07:00)
+2025-06-13 12:30:00 [INFO] __main__: ===> run_task started (2025-06-13T12:30:00+07:00)
+2025-06-13 12:30:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:30:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:35:00 +07)" executed successfully
+2025-06-13 12:35:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:40:00 +07)" (scheduled at 2025-06-13 12:35:00+07:00)
+2025-06-13 12:35:00 [INFO] __main__: ===> run_task started (2025-06-13T12:35:00+07:00)
+2025-06-13 12:35:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:35:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:40:00 +07)" executed successfully
+2025-06-13 12:40:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:45:00 +07)" (scheduled at 2025-06-13 12:40:00+07:00)
+2025-06-13 12:40:00 [INFO] __main__: ===> run_task started (2025-06-13T12:40:00+07:00)
+2025-06-13 12:40:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:40:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:45:00 +07)" executed successfully
+2025-06-13 12:45:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:50:00 +07)" (scheduled at 2025-06-13 12:45:00+07:00)
+2025-06-13 12:45:00 [INFO] __main__: ===> run_task started (2025-06-13T12:45:00+07:00)
+2025-06-13 12:45:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:45:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:50:00 +07)" executed successfully
+2025-06-13 12:50:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:55:00 +07)" (scheduled at 2025-06-13 12:50:00+07:00)
+2025-06-13 12:50:00 [INFO] __main__: ===> run_task started (2025-06-13T12:50:00+07:00)
+2025-06-13 12:50:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:50:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 12:55:00 +07)" executed successfully
+2025-06-13 12:55:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:00:00 +07)" (scheduled at 2025-06-13 12:55:00+07:00)
+2025-06-13 12:55:00 [INFO] __main__: ===> run_task started (2025-06-13T12:55:00+07:00)
+2025-06-13 12:55:00 [INFO] __main__: run_task finished OK
+2025-06-13 12:55:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:00:00 +07)" executed successfully
+2025-06-13 13:00:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:05:00 +07)" (scheduled at 2025-06-13 13:00:00+07:00)
+2025-06-13 13:00:00 [INFO] __main__: ===> run_task started (2025-06-13T13:00:00+07:00)
+2025-06-13 13:00:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:00:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:05:00 +07)" executed successfully
+2025-06-13 13:05:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:10:00 +07)" (scheduled at 2025-06-13 13:05:00+07:00)
+2025-06-13 13:05:00 [INFO] __main__: ===> run_task started (2025-06-13T13:05:00+07:00)
+2025-06-13 13:05:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:05:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:10:00 +07)" executed successfully
+2025-06-13 13:10:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:15:00 +07)" (scheduled at 2025-06-13 13:10:00+07:00)
+2025-06-13 13:10:00 [INFO] __main__: ===> run_task started (2025-06-13T13:10:00+07:00)
+2025-06-13 13:10:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:10:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:15:00 +07)" executed successfully
+2025-06-13 13:15:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:20:00 +07)" (scheduled at 2025-06-13 13:15:00+07:00)
+2025-06-13 13:15:00 [INFO] __main__: ===> run_task started (2025-06-13T13:15:00+07:00)
+2025-06-13 13:15:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:15:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:20:00 +07)" executed successfully
+2025-06-13 13:20:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:25:00 +07)" (scheduled at 2025-06-13 13:20:00+07:00)
+2025-06-13 13:20:00 [INFO] __main__: ===> run_task started (2025-06-13T13:20:00+07:00)
+2025-06-13 13:20:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:20:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:25:00 +07)" executed successfully
+2025-06-13 13:25:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:30:00 +07)" (scheduled at 2025-06-13 13:25:00+07:00)
+2025-06-13 13:25:00 [INFO] __main__: ===> run_task started (2025-06-13T13:25:00+07:00)
+2025-06-13 13:25:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:25:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:30:00 +07)" executed successfully
+2025-06-13 13:30:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:35:00 +07)" (scheduled at 2025-06-13 13:30:00+07:00)
+2025-06-13 13:30:00 [INFO] __main__: ===> run_task started (2025-06-13T13:30:00+07:00)
+2025-06-13 13:30:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:30:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:35:00 +07)" executed successfully
+2025-06-13 13:35:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:40:00 +07)" (scheduled at 2025-06-13 13:35:00+07:00)
+2025-06-13 13:35:00 [INFO] __main__: ===> run_task started (2025-06-13T13:35:00+07:00)
+2025-06-13 13:35:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:35:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:40:00 +07)" executed successfully
+2025-06-13 13:40:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:45:00 +07)" (scheduled at 2025-06-13 13:40:00+07:00)
+2025-06-13 13:40:00 [INFO] __main__: ===> run_task started (2025-06-13T13:40:00+07:00)
+2025-06-13 13:40:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:40:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:45:00 +07)" executed successfully
+2025-06-13 13:45:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:50:00 +07)" (scheduled at 2025-06-13 13:45:00+07:00)
+2025-06-13 13:45:00 [INFO] __main__: ===> run_task started (2025-06-13T13:45:00+07:00)
+2025-06-13 13:45:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:45:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:50:00 +07)" executed successfully
+2025-06-13 13:50:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:55:00 +07)" (scheduled at 2025-06-13 13:50:00+07:00)
+2025-06-13 13:50:00 [INFO] __main__: ===> run_task started (2025-06-13T13:50:00+07:00)
+2025-06-13 13:50:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:50:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-13 13:55:00 +07)" executed successfully
+2025-06-13 13:55:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-16 09:00:00 +07)" (scheduled at 2025-06-13 13:55:00+07:00)
+2025-06-13 13:55:00 [INFO] __main__: ===> run_task started (2025-06-13T13:55:00+07:00)
+2025-06-13 13:55:00 [INFO] __main__: run_task finished OK
+2025-06-13 13:55:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-16 09:00:00 +07)" executed successfully
+2025-06-13 14:00:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:05:00 +07)" (scheduled at 2025-06-13 14:00:00+07:00)
+2025-06-13 14:00:00 [INFO] __main__: ===> run_task started (2025-06-13T14:00:00+07:00)
+2025-06-13 14:00:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:00:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:05:00 +07)" executed successfully
+2025-06-13 14:05:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:10:00 +07)" (scheduled at 2025-06-13 14:05:00+07:00)
+2025-06-13 14:05:00 [INFO] __main__: ===> run_task started (2025-06-13T14:05:00+07:00)
+2025-06-13 14:05:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:05:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:10:00 +07)" executed successfully
+2025-06-13 14:10:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:15:00 +07)" (scheduled at 2025-06-13 14:10:00+07:00)
+2025-06-13 14:10:00 [INFO] __main__: ===> run_task started (2025-06-13T14:10:00+07:00)
+2025-06-13 14:10:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:10:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:15:00 +07)" executed successfully
+2025-06-13 14:15:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:20:00 +07)" (scheduled at 2025-06-13 14:15:00+07:00)
+2025-06-13 14:15:00 [INFO] __main__: ===> run_task started (2025-06-13T14:15:00+07:00)
+2025-06-13 14:15:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:15:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:20:00 +07)" executed successfully
+2025-06-13 14:20:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:25:00 +07)" (scheduled at 2025-06-13 14:20:00+07:00)
+2025-06-13 14:20:00 [INFO] __main__: ===> run_task started (2025-06-13T14:20:00+07:00)
+2025-06-13 14:20:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:20:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:25:00 +07)" executed successfully
+2025-06-13 14:25:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:30:00 +07)" (scheduled at 2025-06-13 14:25:00+07:00)
+2025-06-13 14:25:00 [INFO] __main__: ===> run_task started (2025-06-13T14:25:00+07:00)
+2025-06-13 14:25:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:25:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:30:00 +07)" executed successfully
+2025-06-13 14:30:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:35:00 +07)" (scheduled at 2025-06-13 14:30:00+07:00)
+2025-06-13 14:30:00 [INFO] __main__: ===> run_task started (2025-06-13T14:30:00+07:00)
+2025-06-13 14:30:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:30:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:35:00 +07)" executed successfully
+2025-06-13 14:35:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:40:00 +07)" (scheduled at 2025-06-13 14:35:00+07:00)
+2025-06-13 14:35:00 [INFO] __main__: ===> run_task started (2025-06-13T14:35:00+07:00)
+2025-06-13 14:35:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:35:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:40:00 +07)" executed successfully
+2025-06-13 14:40:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:45:00 +07)" (scheduled at 2025-06-13 14:40:00+07:00)
+2025-06-13 14:40:00 [INFO] __main__: ===> run_task started (2025-06-13T14:40:00+07:00)
+2025-06-13 14:40:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:40:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-13 14:45:00 +07)" executed successfully
+2025-06-13 14:45:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-16 14:00:00 +07)" (scheduled at 2025-06-13 14:45:00+07:00)
+2025-06-13 14:45:00 [INFO] __main__: ===> run_task started (2025-06-13T14:45:00+07:00)
+2025-06-13 14:45:00 [INFO] __main__: run_task finished OK
+2025-06-13 14:45:00 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-16 14:00:00 +07)" executed successfully
