@@ -30,7 +30,10 @@ def run_task():
     try:
         if not SCRIPT.exists():
             raise FileNotFoundError(f"{SCRIPT} not found")
-        run_sh(command=f"python3.10 {SCRIPT}", stream_callback=log.info)
+
+        cmd = f"python3.10 {SCRIPT}"
+        log.info(f"start run {cmd=}")
+        run_sh(command=cmd, stream_callback=log.info)
         log.info("run_task finished OK")
     except Exception as e:
         log.exception("run_task failed: %s", e)
