@@ -38,7 +38,7 @@ class GitPusher:
         :return: Stdout of the command (stripped).
         :raises RuntimeError: If the command exits with a nonzero code.
         """
-        logger.debug(f"[GitPusher] Running: {' '.join(cmd)} (cwd={self.repo_path})")
+        logger.info(f"[GitPusher] Running: {' '.join(cmd)} (cwd={self.repo_path})")
         try:
             result = subprocess.run(
                 cmd,
