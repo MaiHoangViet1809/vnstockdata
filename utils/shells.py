@@ -11,7 +11,7 @@ def get_platform():
     }.get(platform, "others")
 
 
-def run_sh(command, stream_stdout=True, return_log=True, executable: str | None = None):
+def run_sh(command, stream_stdout=True, return_log=True, executable: str | None = None, stream_callback = print):
     platform = get_platform()
     if platform == "linux":
         executable = "/bin/bash"
@@ -33,7 +33,7 @@ def run_sh(command, stream_stdout=True, return_log=True, executable: str | None 
             else:
                 line_log = realtime_output.strip()
                 if stream_stdout:
-                    print(line_log)
+                    stream_callback(line_log)
                 if return_log:
                     full_log.append(line_log)
 

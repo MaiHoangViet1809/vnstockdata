@@ -1,6 +1,7 @@
 from datetime import datetime
 from download_data import DownloadStockFactory
 from helper.update_git import GitPusher
+from utils.timing import timeit_ns
 
 
 src_VN30F = DownloadStockFactory(symbol="VN30F", from_date_yyyymmdd="20250601", to_date_yyyymmdd="20250601", dry_run=True)
@@ -8,6 +9,7 @@ src_VN30 = DownloadStockFactory(symbol="VN30", from_date_yyyymmdd="20250601", to
 git_helper = GitPusher(repo_path="..")
 
 
+@timeit_ns
 def get_data_today():
     git_helper.pull()
     run_dttm = datetime.now().strftime("%Y%m%d")
