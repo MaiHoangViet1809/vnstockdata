@@ -16,3 +16,7 @@ def get_data_today():
     src_VN30F.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
     src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
     git_helper.push()
+
+
+if __name__ == "__main__":
+    get_data_today()
