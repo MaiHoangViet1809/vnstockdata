@@ -63,14 +63,11 @@ class DownloadVN30F(DownloadStock):
 
     @timeit_ns # noqa
     def download(self, from_date_yyyymmdd: str = None, to_date_yyyymmdd: str = None):
-        print("step 1")
         if from_date_yyyymmdd:
             self.start_date = datetime.strptime(from_date_yyyymmdd, "%Y%m%d")
 
         if to_date_yyyymmdd:
             self.end_date = datetime.strptime(to_date_yyyymmdd, "%Y%m%d")
-
-        print(f"step 2 {self.start_date=} {self.end_date=}")
 
         curr_month = self.start_date
         while curr_month <= self.end_date:
