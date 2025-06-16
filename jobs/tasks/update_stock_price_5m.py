@@ -12,8 +12,8 @@ load_dotenv()
 PROJECT_HOME = Path(__file__).resolve().parent.parent.as_posix() if get_platform() == "mac" else getenv("PROJECT_HOME")
 
 
-src_VN30F = DownloadStockFactory(symbol="VN30F", from_date_yyyymmdd="20250601", to_date_yyyymmdd="20250601", dry_run=True)
-src_VN30 = DownloadStockFactory(symbol="VN30", from_date_yyyymmdd="20250601", to_date_yyyymmdd="20250601", dry_run=True)
+src_VN30F = DownloadStockFactory(symbol="VN30F", from_date_yyyymmdd="20250601", to_date_yyyymmdd="20250601", dry_run=False)
+src_VN30 = DownloadStockFactory(symbol="VN30", from_date_yyyymmdd="20250601", to_date_yyyymmdd="20250601", dry_run=False)
 git_helper = GitPusher(repo_path=PROJECT_HOME)
 
 
