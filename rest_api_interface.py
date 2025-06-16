@@ -184,7 +184,7 @@ def save_historical_data(symbol: str, base_path: str = "./data", stock_service: 
             df_out = df_candle[df_candle["stock_date"] == d]
 
             if df_out.size > 0:
-                print_table(df_out, 3)
+                print_table(df_out, 3, print_callback=logger.info)
                 output_path = f"{base_path}/{symbol}"
 
                 if not dry_run:
@@ -192,10 +192,10 @@ def save_historical_data(symbol: str, base_path: str = "./data", stock_service: 
                     df_write = pl.from_pandas(df_out)
                     df_write.write_parquet(file=output_path, partition_by=["stock_date"])
                 else:
-                    print(f"[DRY RUN] rm -rf {output_path}/stock_date={d.strftime('%Y-%m-%d')}")
-                    print(f"[DRU RUN] saving data to {output_path=}")
+                    logger.info(f"[DRY RUN] rm -rf {output_path}/stock_date={d.strftime('%Y-%m-%d')}")
+                    logger.info(f"[DRU RUN] saving data to {output_path=}")
 
-                print("-" * 20, "FINISH", d, "-" * 20)
+                logger.info("-" * 20, "FINISH", d, "-" * 20)
 
 #
 # # Usage:

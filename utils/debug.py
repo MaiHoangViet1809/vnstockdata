@@ -1,7 +1,7 @@
 from pandas import DataFrame
 
 
-def print_table(df: DataFrame, top_n: int = 10, max_col_width = 1000):
+def print_table(df: DataFrame, top_n: int = 10, max_col_width = 1000, print_callback = print):
     from tabulate import tabulate
     from copy import deepcopy
     print_df = deepcopy(df.head(top_n))
@@ -18,7 +18,7 @@ def print_table(df: DataFrame, top_n: int = 10, max_col_width = 1000):
     for col in print_df.select_dtypes(include=['object', 'string', 'category']).columns:
         print_df[col] = print_df[col].apply(lambda x: x[:max_col_width] + "..." if isinstance(x, str) and len(x) > max_col_width else x)
 
-    print("\n" + tabulate(print_df, headers='keys', tablefmt='psql', floatfmt=',.6f'))
+    print_callback("\n" + tabulate(print_df, headers='keys', tablefmt='psql', floatfmt=',.6f'))
 
 
 def format_table(df: DataFrame, top_n: int = 10) -> str:
