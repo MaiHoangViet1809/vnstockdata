@@ -7,3 +7,4 @@ APScheduler
 SQLAlchemy
 python-dotenv
 click
+tabulate
