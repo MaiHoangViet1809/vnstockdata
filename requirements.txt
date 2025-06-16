@@ -6,3 +6,4 @@ wrapt
 APScheduler
 SQLAlchemy
 python-dotenv
+click

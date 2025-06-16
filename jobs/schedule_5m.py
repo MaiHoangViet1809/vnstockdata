@@ -25,13 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent
 SCRIPT    = BASE_DIR / "tasks" / "update_stock_price_5m.py"
 
 
-def run_task():
+def run_task(run_dttm: str = None):
     log.info("===> run_task started (%s)", now().isoformat(timespec="seconds"))
     try:
         if not SCRIPT.exists():
             raise FileNotFoundError(f"{SCRIPT} not found")
 
-        cmd = f"python3.10 {SCRIPT}"
+        cmd = f"python3.10 {SCRIPT}" + (" --run_dttm " + run_dttm if run_dttm else "")
         log.info(f"start run {cmd=}")
         run_sh(command=cmd, stream_callback=log.info)
         log.info("run_task finished OK")
