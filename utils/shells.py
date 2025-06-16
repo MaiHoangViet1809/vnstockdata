@@ -32,7 +32,7 @@ def run_sh(command, stream_stdout=True, return_log=True, executable: str | None 
                 break
             else:
                 line_log = realtime_output.strip()
-                if stream_stdout:
+                if stream_stdout and str(line_log).strip():
                     stream_callback(line_log)
                 if return_log:
                     full_log.append(line_log)
