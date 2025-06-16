@@ -4,9 +4,11 @@ from utils.timing import timeit_ns
 from dotenv import load_dotenv
 from helper.date_calculate import now
 from os import getenv
+from utils.env_info import get_platform
+from pathlib import Path
 
 load_dotenv()
-PROJECT_HOME = getenv("PROJECT_HOME")
+PROJECT_HOME = Path(__file__).resolve().parent.parent.as_posix() if get_platform() == "mac" else getenv("PROJECT_HOME")
 
 
 src_VN30F = DownloadStockFactory(symbol="VN30F", from_date_yyyymmdd="20250601", to_date_yyyymmdd="20250601", dry_run=True)
