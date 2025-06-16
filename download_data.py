@@ -63,11 +63,14 @@ class DownloadVN30F(DownloadStock):
 
     @timeit_ns # noqa
     def download(self, from_date_yyyymmdd: str = None, to_date_yyyymmdd: str = None):
+        print("step 1")
         if from_date_yyyymmdd:
             self.start_date = datetime.strptime(from_date_yyyymmdd, "%Y%m%d")
 
         if to_date_yyyymmdd:
             self.end_date = datetime.strptime(to_date_yyyymmdd, "%Y%m%d")
+
+        print(f"step 2 {self.start_date=} {self.end_date=}")
 
         curr_month = self.start_date
         while curr_month <= self.end_date:
@@ -97,10 +100,20 @@ class DownloadStockFactory:
                 self.engine = DownloadStock(symbol=symbol, dry_run=dry_run, **kwargs)
 
     def download(self, **kwargs):
-        self.engine.download()
+        self.engine.download(**kwargs)
 
 
 if __name__ == "__main__":
+    import logging
+    # Create a handler that outputs to the console (stdout)
+    console_handler = logging.StreamHandler()
+
+    # Create a formatter
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(formatter)
+
+    # Add the handler to the logger
+    logger.addHandler(console_handler)
     download_tool = DownloadStockFactory(symbol="VN30F", from_date_yyyymmdd="20250605", to_date_yyyymmdd="20250606", dry_run = True)
     download_tool.download()
 
