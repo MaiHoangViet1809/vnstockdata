@@ -8,3 +8,4 @@ SQLAlchemy
 python-dotenv
 click
 tabulate
+pyarrow
