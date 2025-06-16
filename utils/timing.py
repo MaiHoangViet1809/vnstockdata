@@ -2,14 +2,19 @@ import wrapt
 import time
 from contextlib import contextmanager
 from dataclasses import dataclass
+from logging import Logger
+
+logger = Logger(name="timming")
 
 
 @dataclass
 class Config:
     debug = False
+    print_callback = logger.info
 
 
 config = Config()
+
 
 @wrapt.decorator
 def timeit_ns(wrapped, instance, args, kwargs):
@@ -18,7 +23,7 @@ def timeit_ns(wrapped, instance, args, kwargs):
     end_time = time.time_ns()
     run_time = (end_time - start_time) / 1e6
     name = getattr(wrapped, '__name__', repr(wrapped))
-    if config.debug: print(f"[timeit_ns] {name}:: {run_time:,.3f} msec :: {args=} {kwargs=} {result=}")
+    if config.debug: config.print_callback(f"[timeit_ns] {name}:: {run_time:,.3f} msec :: {args=} {kwargs=} {result=}")
     return result
 
 
@@ -29,7 +34,7 @@ async def timeit_ns_async(wrapped, instance, args, kwargs):
     end_time = time.time_ns()
     run_time = (end_time - start_time) / 1e6
     name = getattr(wrapped, '__name__', repr(wrapped))
-    if config.debug: print(f"[timeit_ns_async] {name}:: {run_time:,.3f} msec :: {args=} {kwargs=} {result=}")
+    if config.debug: config.print_callback(f"[timeit_ns_async] {name}:: {run_time:,.3f} msec :: {args=} {kwargs=} {result=}")
     return result
 
 
@@ -40,7 +45,7 @@ def timeit_perf_ns(wrapped, instance, args, kwargs):
     end_time = time.perf_counter_ns()
     run_time = (end_time - start_time) / 1e6
     name = getattr(wrapped, '__name__', repr(wrapped))
-    print(f"[timeit_perf_ns] {name}:: {run_time:,.3f} msec")
+    config.print_callback(f"[timeit_perf_ns] {name}:: {run_time:,.3f} msec")
     return result
 
 

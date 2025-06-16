@@ -1,8 +1,8 @@
-from datetime import datetime
 from download_data import DownloadStockFactory
 from helper.update_git import GitPusher
 from utils.timing import timeit_ns
 from dotenv import load_dotenv
+from helper.date_calculate import now
 from os import getenv
 
 load_dotenv()
@@ -17,7 +17,7 @@ git_helper = GitPusher(repo_path=PROJECT_HOME)
 @timeit_ns
 def get_data_today():
     git_helper.pull()
-    run_dttm = datetime.now().strftime("%Y%m%d")
+    run_dttm = now().strftime("%Y%m%d")
     src_VN30F.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
     src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
     git_helper.push()

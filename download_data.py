@@ -4,6 +4,7 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from rest_api_interface import save_historical_data
 from utils.timing import timeit_ns
+
 from logging import Logger
 
 logger = Logger(name="download_data")
@@ -30,12 +31,12 @@ class DownloadStock:
 
         curr_date = self.start_date
         while curr_date <= self.end_date:
-            logger.info("-", curr_date.strftime("%Y-%m"), "-" * 10)
+            logger.info("-" + curr_date.strftime("%Y-%m") + "-" * 10)
             self.api_call(symbol=self._get_symbol(), curr_date=curr_date, base_path="data")
             curr_date += self.interval
 
     def api_call(self, symbol: str, curr_date: datetime, **kwargs):
-        logger.info("--", curr_date.strftime("%Y-%m-%d"), "-" * 10)
+        logger.info("--" + symbol + " " + curr_date.strftime("%Y-%m-%d") + "-" * 10)
         save_historical_data(
             symbol=symbol,
             dt_from=curr_date,
@@ -70,7 +71,7 @@ class DownloadVN30F(DownloadStock):
 
         curr_month = self.start_date
         while curr_month <= self.end_date:
-            logger.info("-", curr_month.strftime("%Y-%m"), "-" * 10)
+            logger.info("-" + curr_month.strftime("%Y-%m") + "-" * 10)
 
             prev_month = curr_month + relativedelta(months=-1)
 
