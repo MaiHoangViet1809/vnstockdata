@@ -33,7 +33,7 @@ def run_task(run_dttm: str = None):
 
         cmd = f"python3.10 {SCRIPT}" + (" --run_dttm " + run_dttm if run_dttm else "")
         log.info(f"start run {cmd=}")
-        run_sh(command=cmd, stream_callback=log.info)
+        run_sh(command=cmd, stream_callback=print)
         log.info("run_task finished OK")
     except Exception as e:
         log.exception("run_task failed: %s", e)
