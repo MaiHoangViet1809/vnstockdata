@@ -7416,3 +7416,44 @@ nohup: ignoring input
 2025-06-18 14:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git status --porcelain (cwd=/apps/vnstockdata)
 2025-06-18 14:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Detected uncommitted changes. Staging & committing...
 2025-06-18 14:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git add . (cwd=/apps/vnstockdata)
+2025-06-18 14:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: date +%Y-%m-%dT%H:%M:%S (cwd=/apps/vnstockdata)
+2025-06-18 14:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git commit -m autocommit: maihoangviet @ 2025-06-18T14:05:04 (cwd=/apps/vnstockdata)
+2025-06-18 14:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Local changes committed with message: autocommit: maihoangviet @ 2025-06-18T14:05:04
+2025-06-18 14:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pushing to origin/main
+2025-06-18 14:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git push origin main (cwd=/apps/vnstockdata)
+2025-06-18 14:05:08 [INFO] __main__: INFO:helper.update_git:[GitPusher] Push successful.
+2025-06-18 14:05:08 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30F2506'], 'from': 1750179600, 'to': 1750262400}
+2025-06-18 14:05:08 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750179600, 'to': 1750262400}
+2025-06-18 14:05:08 [INFO] __main__: run_task finished OK
+2025-06-18 14:05:08 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-18 14:10:00 +07)" executed successfully
+2025-06-18 14:10:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='14', minute='0-45/5'], next run at: 2025-06-18 14:15:00 +07)" (scheduled at 2025-06-18 14:10:00+07:00)
+2025-06-18 14:10:00 [INFO] __main__: ===> run_task started (2025-06-18T14:10:00+07:00)
+2025-06-18 14:10:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-18 14:10:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-18 14:10:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-18 14:10:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-18 14:10:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 200 OK"
+2025-06-18 14:10:04 [INFO] __main__: INFO:rest_api_interface:
+2025-06-18 14:10:04 [INFO] __main__: +----+-----------+--------------+--------------+--------------+--------------+------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------+
+2025-06-18 14:10:04 [INFO] __main__: |    | symbol    |            o |            h |            l |            c |    v | t                         |   accumulatedVolume |   accumulatedValue | minBatchTruncTime         | stock_date   | snapshot_dttm                    |
+2025-06-18 14:10:04 [INFO] __main__: |----+-----------+--------------+--------------+--------------+--------------+------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------|
+2025-06-18 14:10:04 [INFO] __main__: |  0 | VN30F2506 | 1,424.000000 | 1,424.500000 | 1,423.700000 | 1,424.000000 | 2019 | 2025-06-18 09:00:00+07:00 |                2019 |     287,515.140000 | 2025-06-18 09:00:00+07:00 | 2025-06-18   | 2025-06-18 14:10:04.125127+07:00 |
+2025-06-18 14:10:04 [INFO] __main__: |  1 | VN30F2506 | 1,424.000000 | 1,424.500000 | 1,424.000000 | 1,424.300000 |  671 | 2025-06-18 09:01:00+07:00 |                2690 |     383,084.250000 | 2025-06-18 09:00:00+07:00 | 2025-06-18   | 2025-06-18 14:10:04.125127+07:00 |
+2025-06-18 14:10:04 [INFO] __main__: |  2 | VN30F2506 | 1,424.300000 | 1,424.300000 | 1,423.100000 | 1,423.800000 |  727 | 2025-06-18 09:02:00+07:00 |                3417 |     486,604.910000 | 2025-06-18 09:00:00+07:00 | 2025-06-18   | 2025-06-18 14:10:04.125127+07:00 |
+2025-06-18 14:10:04 [INFO] __main__: +----+-----------+--------------+--------------+--------------+--------------+------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------+
+2025-06-18 14:10:04 [INFO] __main__: INFO:rest_api_interface:write to file output_path='data/VN30F/VN30F2506'
+2025-06-18 14:10:04 [INFO] __main__: INFO:rest_api_interface:-------------------- FINISH 2025-06-18 --------------------
+2025-06-18 14:10:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 200 OK"
+2025-06-18 14:10:04 [INFO] __main__: INFO:rest_api_interface:
+2025-06-18 14:10:04 [INFO] __main__: +----+----------+--------------+--------------+--------------+--------------+---------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------+
+2025-06-18 14:10:04 [INFO] __main__: |    | symbol   |            o |            h |            l |            c |       v | t                         |   accumulatedVolume |   accumulatedValue | minBatchTruncTime         | stock_date   | snapshot_dttm                    |
+2025-06-18 14:10:04 [INFO] __main__: |----+----------+--------------+--------------+--------------+--------------+---------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------|
+2025-06-18 14:10:04 [INFO] __main__: |  0 | VN30     | 1,431.390000 | 1,432.590000 | 1,431.360000 | 1,431.600000 | 2658456 | 2025-06-18 09:15:00+07:00 |             2658456 |      88,755.340750 | 2025-06-18 09:15:00+07:00 | 2025-06-18   | 2025-06-18 14:10:04.491542+07:00 |
+2025-06-18 14:10:04 [INFO] __main__: |  1 | VN30     | 1,431.260000 | 1,432.030000 | 1,431.260000 | 1,431.730000 | 1462674 | 2025-06-18 09:16:00+07:00 |             4121130 |     146,605.279750 | 2025-06-18 09:15:00+07:00 | 2025-06-18   | 2025-06-18 14:10:04.491542+07:00 |
+2025-06-18 14:10:04 [INFO] __main__: |  2 | VN30     | 1,431.840000 | 1,432.210000 | 1,431.330000 | 1,431.330000 | 1418129 | 2025-06-18 09:17:00+07:00 |             5539259 |     186,101.429200 | 2025-06-18 09:15:00+07:00 | 2025-06-18   | 2025-06-18 14:10:04.491542+07:00 |
+2025-06-18 14:10:04 [INFO] __main__: +----+----------+--------------+--------------+--------------+--------------+---------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------+
+2025-06-18 14:10:04 [INFO] __main__: INFO:rest_api_interface:write to file output_path='data/VN30'
+2025-06-18 14:10:04 [INFO] __main__: INFO:rest_api_interface:-------------------- FINISH 2025-06-18 --------------------
+2025-06-18 14:10:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git status --porcelain (cwd=/apps/vnstockdata)
+2025-06-18 14:10:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Detected uncommitted changes. Staging & committing...
+2025-06-18 14:10:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git add . (cwd=/apps/vnstockdata)
