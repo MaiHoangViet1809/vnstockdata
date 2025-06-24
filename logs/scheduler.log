@@ -15391,3 +15391,33 @@ nohup: ignoring input
 2025-06-24 10:40:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git status --porcelain (cwd=/apps/vnstockdata)
 2025-06-24 10:40:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Detected uncommitted changes. Staging & committing...
 2025-06-24 10:40:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git add . (cwd=/apps/vnstockdata)
+2025-06-24 10:40:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: date +%Y-%m-%dT%H:%M:%S (cwd=/apps/vnstockdata)
+2025-06-24 10:40:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git commit -m autocommit: maihoangviet @ 2025-06-24T10:40:04 (cwd=/apps/vnstockdata)
+2025-06-24 10:40:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Local changes committed with message: autocommit: maihoangviet @ 2025-06-24T10:40:04
+2025-06-24 10:40:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pushing to origin/main
+2025-06-24 10:40:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git push origin main (cwd=/apps/vnstockdata)
+2025-06-24 10:40:07 [INFO] __main__: INFO:helper.update_git:[GitPusher] Push successful.
+2025-06-24 10:40:07 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750698000, 'to': 1750780800}
+2025-06-24 10:40:07 [INFO] __main__: 
+2025-06-24 10:40:07 [INFO] __main__: run_task finished OK
+2025-06-24 10:40:07 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 10:45:00 +07)" executed successfully
+2025-06-24 10:45:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 10:50:00 +07)" (scheduled at 2025-06-24 10:45:00+07:00)
+2025-06-24 10:45:00 [INFO] __main__: ===> run_task started (2025-06-24T10:45:00+07:00)
+2025-06-24 10:45:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-24 10:45:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-24 10:45:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-24 10:45:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-24 10:45:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 200 OK"
+2025-06-24 10:45:04 [INFO] __main__: INFO:rest_api_interface:
+2025-06-24 10:45:04 [INFO] __main__: +----+----------+--------------+--------------+--------------+--------------+---------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------+
+2025-06-24 10:45:04 [INFO] __main__: |    | symbol   |            o |            h |            l |            c |       v | t                         |   accumulatedVolume |   accumulatedValue | minBatchTruncTime         | stock_date   | snapshot_dttm                    |
+2025-06-24 10:45:04 [INFO] __main__: |----+----------+--------------+--------------+--------------+--------------+---------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------|
+2025-06-24 10:45:04 [INFO] __main__: |  0 | VN30     | 1,448.320000 | 1,461.280000 | 1,448.320000 | 1,461.130000 | 5801236 | 2025-06-24 09:15:00+07:00 |             5801236 |     210,409.257350 | 2025-06-24 09:15:00+07:00 | 2025-06-24   | 2025-06-24 10:45:04.071722+07:00 |
+2025-06-24 10:45:04 [INFO] __main__: |  1 | VN30     | 1,460.820000 | 1,461.590000 | 1,460.490000 | 1,461.040000 | 1862370 | 2025-06-24 09:16:00+07:00 |             7663606 |     279,943.232650 | 2025-06-24 09:15:00+07:00 | 2025-06-24   | 2025-06-24 10:45:04.071722+07:00 |
+2025-06-24 10:45:04 [INFO] __main__: |  2 | VN30     | 1,461.170000 | 1,461.760000 | 1,460.520000 | 1,460.960000 | 1862984 | 2025-06-24 09:17:00+07:00 |             9526590 |     349,214.121200 | 2025-06-24 09:15:00+07:00 | 2025-06-24   | 2025-06-24 10:45:04.071722+07:00 |
+2025-06-24 10:45:04 [INFO] __main__: +----+----------+--------------+--------------+--------------+--------------+---------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------+
+2025-06-24 10:45:04 [INFO] __main__: INFO:rest_api_interface:write to file output_path='data/VN30'
+2025-06-24 10:45:04 [INFO] __main__: INFO:rest_api_interface:-------------------- FINISH 2025-06-24 --------------------
+2025-06-24 10:45:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git status --porcelain (cwd=/apps/vnstockdata)
+2025-06-24 10:45:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Detected uncommitted changes. Staging & committing...
+2025-06-24 10:45:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git add . (cwd=/apps/vnstockdata)
