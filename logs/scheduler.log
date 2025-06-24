@@ -16063,3 +16063,362 @@ nohup: ignoring input
 2025-06-24 12:35:46 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git status --porcelain (cwd=/apps/vnstockdata)
 2025-06-24 12:35:46 [INFO] __main__: INFO:helper.update_git:[GitPusher] Detected uncommitted changes. Staging & committing...
 2025-06-24 12:35:46 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git add . (cwd=/apps/vnstockdata)
+2025-06-24 12:35:46 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: date +%Y-%m-%dT%H:%M:%S (cwd=/apps/vnstockdata)
+2025-06-24 12:35:46 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git commit -m autocommit: maihoangviet @ 2025-06-24T12:35:46 (cwd=/apps/vnstockdata)
+2025-06-24 12:35:46 [INFO] __main__: INFO:helper.update_git:[GitPusher] Local changes committed with message: autocommit: maihoangviet @ 2025-06-24T12:35:46
+2025-06-24 12:35:46 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pushing to origin/main
+2025-06-24 12:35:46 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git push origin main (cwd=/apps/vnstockdata)
+2025-06-24 12:35:49 [INFO] __main__: INFO:helper.update_git:[GitPusher] Push successful.
+2025-06-24 12:35:49 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750698000, 'to': 1750780800}
+2025-06-24 12:35:49 [INFO] __main__: run_task finished OK
+2025-06-24 12:35:49 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 12:40:00 +07)" executed successfully
+2025-06-24 12:40:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 12:45:00 +07)" (scheduled at 2025-06-24 12:40:00+07:00)
+2025-06-24 12:40:00 [INFO] __main__: ===> run_task started (2025-06-24T12:40:00+07:00)
+2025-06-24 12:40:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-24 12:40:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-24 12:40:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-24 12:40:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-24 12:41:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 503 Service Unavailable"
+2025-06-24 12:41:04 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750698000, 'to': 1750780800}
+2025-06-24 12:41:04 [INFO] __main__: Traceback (most recent call last):
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 32, in <module>
+2025-06-24 12:41:04 [INFO] __main__: get_data_today()
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__
+2025-06-24 12:41:04 [INFO] __main__: return self.main(*args, **kwargs)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1363, in main
+2025-06-24 12:41:04 [INFO] __main__: rv = self.invoke(ctx)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1226, in invoke
+2025-06-24 12:41:04 [INFO] __main__: return ctx.invoke(self.callback, **ctx.params)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 794, in invoke
+2025-06-24 12:41:04 [INFO] __main__: return callback(*args, **kwargs)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:41:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 27, in get_data_today
+2025-06-24 12:41:04 [INFO] __main__: src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 100, in download
+2025-06-24 12:41:04 [INFO] __main__: self.engine.download(**kwargs)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:41:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 35, in download
+2025-06-24 12:41:04 [INFO] __main__: self.api_call(symbol=self._get_symbol(), curr_date=curr_date, base_path="data")
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 40, in api_call
+2025-06-24 12:41:04 [INFO] __main__: save_historical_data(
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:41:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 177, in save_historical_data
+2025-06-24 12:41:04 [INFO] __main__: df_candle = stock_service.get_candle(symbol=symbol, **kwargs)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 154, in get_candle
+2025-06-24 12:41:04 [INFO] __main__: return CandleFetcher(symbol, dt_from, dt_to).fetch()
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 71, in fetch
+2025-06-24 12:41:04 [INFO] __main__: raw = self.request_data(self.endpoint_url(), payload)
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 32, in request_data
+2025-06-24 12:41:04 [INFO] __main__: resp.raise_for_status()
+2025-06-24 12:41:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+2025-06-24 12:41:04 [INFO] __main__: raise HTTPStatusError(message, request=request, response=self)
+2025-06-24 12:41:04 [INFO] __main__: httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://trading.vietcap.com.vn/api/chart/OHLCChart/gap'
+2025-06-24 12:41:04 [INFO] __main__: For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503
+2025-06-24 12:41:04 [INFO] __main__: run_task finished OK
+2025-06-24 12:41:04 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 12:45:00 +07)" executed successfully
+2025-06-24 12:45:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 12:50:00 +07)" (scheduled at 2025-06-24 12:45:00+07:00)
+2025-06-24 12:45:00 [INFO] __main__: ===> run_task started (2025-06-24T12:45:00+07:00)
+2025-06-24 12:45:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-24 12:45:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-24 12:45:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-24 12:45:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-24 12:46:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 503 Service Unavailable"
+2025-06-24 12:46:04 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750698000, 'to': 1750780800}
+2025-06-24 12:46:04 [INFO] __main__: Traceback (most recent call last):
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 32, in <module>
+2025-06-24 12:46:04 [INFO] __main__: get_data_today()
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__
+2025-06-24 12:46:04 [INFO] __main__: return self.main(*args, **kwargs)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1363, in main
+2025-06-24 12:46:04 [INFO] __main__: rv = self.invoke(ctx)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1226, in invoke
+2025-06-24 12:46:04 [INFO] __main__: return ctx.invoke(self.callback, **ctx.params)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 794, in invoke
+2025-06-24 12:46:04 [INFO] __main__: return callback(*args, **kwargs)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:46:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 27, in get_data_today
+2025-06-24 12:46:04 [INFO] __main__: src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 100, in download
+2025-06-24 12:46:04 [INFO] __main__: self.engine.download(**kwargs)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:46:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 35, in download
+2025-06-24 12:46:04 [INFO] __main__: self.api_call(symbol=self._get_symbol(), curr_date=curr_date, base_path="data")
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 40, in api_call
+2025-06-24 12:46:04 [INFO] __main__: save_historical_data(
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:46:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 177, in save_historical_data
+2025-06-24 12:46:04 [INFO] __main__: df_candle = stock_service.get_candle(symbol=symbol, **kwargs)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 154, in get_candle
+2025-06-24 12:46:04 [INFO] __main__: return CandleFetcher(symbol, dt_from, dt_to).fetch()
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 71, in fetch
+2025-06-24 12:46:04 [INFO] __main__: raw = self.request_data(self.endpoint_url(), payload)
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 32, in request_data
+2025-06-24 12:46:04 [INFO] __main__: resp.raise_for_status()
+2025-06-24 12:46:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+2025-06-24 12:46:04 [INFO] __main__: raise HTTPStatusError(message, request=request, response=self)
+2025-06-24 12:46:04 [INFO] __main__: httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://trading.vietcap.com.vn/api/chart/OHLCChart/gap'
+2025-06-24 12:46:04 [INFO] __main__: For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503
+2025-06-24 12:46:04 [INFO] __main__: run_task finished OK
+2025-06-24 12:46:04 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 12:50:00 +07)" executed successfully
+2025-06-24 12:50:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 12:55:00 +07)" (scheduled at 2025-06-24 12:50:00+07:00)
+2025-06-24 12:50:00 [INFO] __main__: ===> run_task started (2025-06-24T12:50:00+07:00)
+2025-06-24 12:50:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-24 12:50:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-24 12:50:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-24 12:50:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-24 12:51:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 503 Service Unavailable"
+2025-06-24 12:51:04 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750698000, 'to': 1750780800}
+2025-06-24 12:51:04 [INFO] __main__: Traceback (most recent call last):
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 32, in <module>
+2025-06-24 12:51:04 [INFO] __main__: get_data_today()
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__
+2025-06-24 12:51:04 [INFO] __main__: return self.main(*args, **kwargs)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1363, in main
+2025-06-24 12:51:04 [INFO] __main__: rv = self.invoke(ctx)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1226, in invoke
+2025-06-24 12:51:04 [INFO] __main__: return ctx.invoke(self.callback, **ctx.params)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 794, in invoke
+2025-06-24 12:51:04 [INFO] __main__: return callback(*args, **kwargs)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:51:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 27, in get_data_today
+2025-06-24 12:51:04 [INFO] __main__: src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 100, in download
+2025-06-24 12:51:04 [INFO] __main__: self.engine.download(**kwargs)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:51:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 35, in download
+2025-06-24 12:51:04 [INFO] __main__: self.api_call(symbol=self._get_symbol(), curr_date=curr_date, base_path="data")
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 40, in api_call
+2025-06-24 12:51:04 [INFO] __main__: save_historical_data(
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:51:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 177, in save_historical_data
+2025-06-24 12:51:04 [INFO] __main__: df_candle = stock_service.get_candle(symbol=symbol, **kwargs)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 154, in get_candle
+2025-06-24 12:51:04 [INFO] __main__: return CandleFetcher(symbol, dt_from, dt_to).fetch()
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 71, in fetch
+2025-06-24 12:51:04 [INFO] __main__: raw = self.request_data(self.endpoint_url(), payload)
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 32, in request_data
+2025-06-24 12:51:04 [INFO] __main__: resp.raise_for_status()
+2025-06-24 12:51:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+2025-06-24 12:51:04 [INFO] __main__: raise HTTPStatusError(message, request=request, response=self)
+2025-06-24 12:51:04 [INFO] __main__: httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://trading.vietcap.com.vn/api/chart/OHLCChart/gap'
+2025-06-24 12:51:04 [INFO] __main__: For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503
+2025-06-24 12:51:04 [INFO] __main__: run_task finished OK
+2025-06-24 12:51:04 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 12:55:00 +07)" executed successfully
+2025-06-24 12:55:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 13:00:00 +07)" (scheduled at 2025-06-24 12:55:00+07:00)
+2025-06-24 12:55:00 [INFO] __main__: ===> run_task started (2025-06-24T12:55:00+07:00)
+2025-06-24 12:55:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-24 12:55:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-24 12:55:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-24 12:55:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-24 12:56:03 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 503 Service Unavailable"
+2025-06-24 12:56:03 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750698000, 'to': 1750780800}
+2025-06-24 12:56:03 [INFO] __main__: Traceback (most recent call last):
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 32, in <module>
+2025-06-24 12:56:03 [INFO] __main__: get_data_today()
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__
+2025-06-24 12:56:03 [INFO] __main__: return self.main(*args, **kwargs)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1363, in main
+2025-06-24 12:56:03 [INFO] __main__: rv = self.invoke(ctx)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1226, in invoke
+2025-06-24 12:56:03 [INFO] __main__: return ctx.invoke(self.callback, **ctx.params)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 794, in invoke
+2025-06-24 12:56:03 [INFO] __main__: return callback(*args, **kwargs)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:56:03 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 27, in get_data_today
+2025-06-24 12:56:03 [INFO] __main__: src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 100, in download
+2025-06-24 12:56:03 [INFO] __main__: self.engine.download(**kwargs)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:56:03 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 35, in download
+2025-06-24 12:56:03 [INFO] __main__: self.api_call(symbol=self._get_symbol(), curr_date=curr_date, base_path="data")
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 40, in api_call
+2025-06-24 12:56:03 [INFO] __main__: save_historical_data(
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 12:56:03 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 177, in save_historical_data
+2025-06-24 12:56:03 [INFO] __main__: df_candle = stock_service.get_candle(symbol=symbol, **kwargs)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 154, in get_candle
+2025-06-24 12:56:03 [INFO] __main__: return CandleFetcher(symbol, dt_from, dt_to).fetch()
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 71, in fetch
+2025-06-24 12:56:03 [INFO] __main__: raw = self.request_data(self.endpoint_url(), payload)
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 32, in request_data
+2025-06-24 12:56:03 [INFO] __main__: resp.raise_for_status()
+2025-06-24 12:56:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+2025-06-24 12:56:03 [INFO] __main__: raise HTTPStatusError(message, request=request, response=self)
+2025-06-24 12:56:03 [INFO] __main__: httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://trading.vietcap.com.vn/api/chart/OHLCChart/gap'
+2025-06-24 12:56:03 [INFO] __main__: For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503
+2025-06-24 12:56:04 [INFO] __main__: run_task finished OK
+2025-06-24 12:56:04 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 13:00:00 +07)" executed successfully
+2025-06-24 13:00:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 13:05:00 +07)" (scheduled at 2025-06-24 13:00:00+07:00)
+2025-06-24 13:00:00 [INFO] __main__: ===> run_task started (2025-06-24T13:00:00+07:00)
+2025-06-24 13:00:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-24 13:00:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-24 13:00:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-24 13:00:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-24 13:01:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 503 Service Unavailable"
+2025-06-24 13:01:04 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750698000, 'to': 1750780800}
+2025-06-24 13:01:04 [INFO] __main__: Traceback (most recent call last):
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 32, in <module>
+2025-06-24 13:01:04 [INFO] __main__: get_data_today()
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__
+2025-06-24 13:01:04 [INFO] __main__: return self.main(*args, **kwargs)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1363, in main
+2025-06-24 13:01:04 [INFO] __main__: rv = self.invoke(ctx)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1226, in invoke
+2025-06-24 13:01:04 [INFO] __main__: return ctx.invoke(self.callback, **ctx.params)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 794, in invoke
+2025-06-24 13:01:04 [INFO] __main__: return callback(*args, **kwargs)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 13:01:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 27, in get_data_today
+2025-06-24 13:01:04 [INFO] __main__: src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 100, in download
+2025-06-24 13:01:04 [INFO] __main__: self.engine.download(**kwargs)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 13:01:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 35, in download
+2025-06-24 13:01:04 [INFO] __main__: self.api_call(symbol=self._get_symbol(), curr_date=curr_date, base_path="data")
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 40, in api_call
+2025-06-24 13:01:04 [INFO] __main__: save_historical_data(
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 13:01:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 177, in save_historical_data
+2025-06-24 13:01:04 [INFO] __main__: df_candle = stock_service.get_candle(symbol=symbol, **kwargs)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 154, in get_candle
+2025-06-24 13:01:04 [INFO] __main__: return CandleFetcher(symbol, dt_from, dt_to).fetch()
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 71, in fetch
+2025-06-24 13:01:04 [INFO] __main__: raw = self.request_data(self.endpoint_url(), payload)
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 32, in request_data
+2025-06-24 13:01:04 [INFO] __main__: resp.raise_for_status()
+2025-06-24 13:01:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+2025-06-24 13:01:04 [INFO] __main__: raise HTTPStatusError(message, request=request, response=self)
+2025-06-24 13:01:04 [INFO] __main__: httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://trading.vietcap.com.vn/api/chart/OHLCChart/gap'
+2025-06-24 13:01:04 [INFO] __main__: For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503
+2025-06-24 13:01:04 [INFO] __main__: run_task finished OK
+2025-06-24 13:01:04 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 13:05:00 +07)" executed successfully
+2025-06-24 13:05:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 13:10:00 +07)" (scheduled at 2025-06-24 13:05:00+07:00)
+2025-06-24 13:05:00 [INFO] __main__: ===> run_task started (2025-06-24T13:05:00+07:00)
+2025-06-24 13:05:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-24 13:05:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-24 13:05:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-24 13:05:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-24 13:06:03 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 503 Service Unavailable"
+2025-06-24 13:06:03 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750698000, 'to': 1750780800}
+2025-06-24 13:06:03 [INFO] __main__: Traceback (most recent call last):
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 32, in <module>
+2025-06-24 13:06:03 [INFO] __main__: get_data_today()
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__
+2025-06-24 13:06:03 [INFO] __main__: return self.main(*args, **kwargs)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1363, in main
+2025-06-24 13:06:03 [INFO] __main__: rv = self.invoke(ctx)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1226, in invoke
+2025-06-24 13:06:03 [INFO] __main__: return ctx.invoke(self.callback, **ctx.params)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 794, in invoke
+2025-06-24 13:06:03 [INFO] __main__: return callback(*args, **kwargs)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 13:06:03 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 27, in get_data_today
+2025-06-24 13:06:03 [INFO] __main__: src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 100, in download
+2025-06-24 13:06:03 [INFO] __main__: self.engine.download(**kwargs)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 13:06:03 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 35, in download
+2025-06-24 13:06:03 [INFO] __main__: self.api_call(symbol=self._get_symbol(), curr_date=curr_date, base_path="data")
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 40, in api_call
+2025-06-24 13:06:03 [INFO] __main__: save_historical_data(
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 13:06:03 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 177, in save_historical_data
+2025-06-24 13:06:03 [INFO] __main__: df_candle = stock_service.get_candle(symbol=symbol, **kwargs)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 154, in get_candle
+2025-06-24 13:06:03 [INFO] __main__: return CandleFetcher(symbol, dt_from, dt_to).fetch()
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 71, in fetch
+2025-06-24 13:06:03 [INFO] __main__: raw = self.request_data(self.endpoint_url(), payload)
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 32, in request_data
+2025-06-24 13:06:03 [INFO] __main__: resp.raise_for_status()
+2025-06-24 13:06:03 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+2025-06-24 13:06:03 [INFO] __main__: raise HTTPStatusError(message, request=request, response=self)
+2025-06-24 13:06:03 [INFO] __main__: httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'https://trading.vietcap.com.vn/api/chart/OHLCChart/gap'
+2025-06-24 13:06:03 [INFO] __main__: For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503
+2025-06-24 13:06:04 [INFO] __main__: run_task finished OK
+2025-06-24 13:06:04 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 13:10:00 +07)" executed successfully
+2025-06-24 13:10:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 13:15:00 +07)" (scheduled at 2025-06-24 13:10:00+07:00)
+2025-06-24 13:10:00 [INFO] __main__: ===> run_task started (2025-06-24T13:10:00+07:00)
+2025-06-24 13:10:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-24 13:10:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-24 13:10:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-24 13:10:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-24 13:10:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 503 Service Temporarily Unavailable"
+2025-06-24 13:10:04 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750698000, 'to': 1750780800}
+2025-06-24 13:10:04 [INFO] __main__: Traceback (most recent call last):
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 32, in <module>
+2025-06-24 13:10:04 [INFO] __main__: get_data_today()
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1442, in __call__
+2025-06-24 13:10:04 [INFO] __main__: return self.main(*args, **kwargs)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1363, in main
+2025-06-24 13:10:04 [INFO] __main__: rv = self.invoke(ctx)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 1226, in invoke
+2025-06-24 13:10:04 [INFO] __main__: return ctx.invoke(self.callback, **ctx.params)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/click/core.py", line 794, in invoke
+2025-06-24 13:10:04 [INFO] __main__: return callback(*args, **kwargs)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 13:10:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/jobs/tasks/update_stock_price_5m.py", line 27, in get_data_today
+2025-06-24 13:10:04 [INFO] __main__: src_VN30.download(from_date_yyyymmdd=run_dttm, to_date_yyyymmdd=run_dttm)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 100, in download
+2025-06-24 13:10:04 [INFO] __main__: self.engine.download(**kwargs)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 13:10:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 35, in download
+2025-06-24 13:10:04 [INFO] __main__: self.api_call(symbol=self._get_symbol(), curr_date=curr_date, base_path="data")
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/download_data.py", line 40, in api_call
+2025-06-24 13:10:04 [INFO] __main__: save_historical_data(
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/utils/timing.py", line 22, in timeit_ns
+2025-06-24 13:10:04 [INFO] __main__: result = wrapped(*args, **kwargs)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 177, in save_historical_data
+2025-06-24 13:10:04 [INFO] __main__: df_candle = stock_service.get_candle(symbol=symbol, **kwargs)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 154, in get_candle
+2025-06-24 13:10:04 [INFO] __main__: return CandleFetcher(symbol, dt_from, dt_to).fetch()
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 71, in fetch
+2025-06-24 13:10:04 [INFO] __main__: raw = self.request_data(self.endpoint_url(), payload)
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/rest_api_interface.py", line 32, in request_data
+2025-06-24 13:10:04 [INFO] __main__: resp.raise_for_status()
+2025-06-24 13:10:04 [INFO] __main__: File "/apps/vnstockdata/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+2025-06-24 13:10:04 [INFO] __main__: raise HTTPStatusError(message, request=request, response=self)
+2025-06-24 13:10:04 [INFO] __main__: httpx.HTTPStatusError: Server error '503 Service Temporarily Unavailable' for url 'https://trading.vietcap.com.vn/api/chart/OHLCChart/gap'
+2025-06-24 13:10:04 [INFO] __main__: For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503
+2025-06-24 13:10:04 [INFO] __main__: 
+2025-06-24 13:10:04 [INFO] __main__: run_task finished OK
+2025-06-24 13:10:04 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 13:15:00 +07)" executed successfully
+2025-06-24 13:15:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-24 13:20:00 +07)" (scheduled at 2025-06-24 13:15:00+07:00)
+2025-06-24 13:15:00 [INFO] __main__: ===> run_task started (2025-06-24T13:15:00+07:00)
+2025-06-24 13:15:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-24 13:15:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-24 13:15:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-24 13:15:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-24 13:15:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 200 OK"
+2025-06-24 13:15:04 [INFO] __main__: INFO:rest_api_interface:
+2025-06-24 13:15:04 [INFO] __main__: +----+----------+--------------+--------------+--------------+--------------+---------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------+
+2025-06-24 13:15:04 [INFO] __main__: |    | symbol   |            o |            h |            l |            c |       v | t                         |   accumulatedVolume |   accumulatedValue | minBatchTruncTime         | stock_date   | snapshot_dttm                    |
+2025-06-24 13:15:04 [INFO] __main__: |----+----------+--------------+--------------+--------------+--------------+---------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------|
+2025-06-24 13:15:04 [INFO] __main__: |  0 | VN30     | 1,448.320000 | 1,461.280000 | 1,448.320000 | 1,461.130000 | 5801236 | 2025-06-24 09:15:00+07:00 |             5801236 |     210,409.257350 | 2025-06-24 09:15:00+07:00 | 2025-06-24   | 2025-06-24 13:15:04.117916+07:00 |
+2025-06-24 13:15:04 [INFO] __main__: |  1 | VN30     | 1,460.820000 | 1,461.590000 | 1,460.490000 | 1,461.040000 | 1862370 | 2025-06-24 09:16:00+07:00 |             7663606 |     279,943.232650 | 2025-06-24 09:15:00+07:00 | 2025-06-24   | 2025-06-24 13:15:04.117916+07:00 |
+2025-06-24 13:15:04 [INFO] __main__: |  2 | VN30     | 1,461.170000 | 1,461.760000 | 1,460.520000 | 1,460.960000 | 1862984 | 2025-06-24 09:17:00+07:00 |             9526590 |     349,214.121200 | 2025-06-24 09:15:00+07:00 | 2025-06-24   | 2025-06-24 13:15:04.117916+07:00 |
+2025-06-24 13:15:04 [INFO] __main__: +----+----------+--------------+--------------+--------------+--------------+---------+---------------------------+---------------------+--------------------+---------------------------+--------------+----------------------------------+
+2025-06-24 13:15:04 [INFO] __main__: INFO:rest_api_interface:write to file output_path='data/VN30'
+2025-06-24 13:15:04 [INFO] __main__: INFO:rest_api_interface:-------------------- FINISH 2025-06-24 --------------------
+2025-06-24 13:15:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git status --porcelain (cwd=/apps/vnstockdata)
+2025-06-24 13:15:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Detected uncommitted changes. Staging & committing...
+2025-06-24 13:15:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git add . (cwd=/apps/vnstockdata)
