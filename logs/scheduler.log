@@ -21173,3 +21173,22 @@ nohup: ignoring input
 2025-06-27 09:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git status --porcelain (cwd=/apps/vnstockdata)
 2025-06-27 09:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Detected uncommitted changes. Staging & committing...
 2025-06-27 09:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git add . (cwd=/apps/vnstockdata)
+2025-06-27 09:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: date +%Y-%m-%dT%H:%M:%S (cwd=/apps/vnstockdata)
+2025-06-27 09:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git commit -m autocommit: maihoangviet @ 2025-06-27T09:05:04 (cwd=/apps/vnstockdata)
+2025-06-27 09:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Local changes committed with message: autocommit: maihoangviet @ 2025-06-27T09:05:04
+2025-06-27 09:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pushing to origin/main
+2025-06-27 09:05:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git push origin main (cwd=/apps/vnstockdata)
+2025-06-27 09:05:07 [INFO] __main__: INFO:helper.update_git:[GitPusher] Push successful.
+2025-06-27 09:05:07 [INFO] __main__: Payload: {'timeFrame': 'ONE_MINUTE', 'symbols': ['VN30'], 'from': 1750957200, 'to': 1751040000}
+2025-06-27 09:05:07 [INFO] __main__: run_task finished OK
+2025-06-27 09:05:07 [INFO] apscheduler.executors.default: Job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-27 09:10:00 +07)" executed successfully
+2025-06-27 09:10:00 [INFO] apscheduler.executors.default: Running job "run_task (trigger: cron[day_of_week='mon-fri', hour='9-13', minute='*/5'], next run at: 2025-06-27 09:15:00 +07)" (scheduled at 2025-06-27 09:10:00+07:00)
+2025-06-27 09:10:00 [INFO] __main__: ===> run_task started (2025-06-27T09:10:00+07:00)
+2025-06-27 09:10:00 [INFO] __main__: start run cmd='python3.10 /apps/vnstockdata/jobs/tasks/update_stock_price_5m.py'
+2025-06-27 09:10:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pulling new change
+2025-06-27 09:10:00 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git pull (cwd=/apps/vnstockdata)
+2025-06-27 09:10:03 [INFO] __main__: INFO:helper.update_git:[GitPusher] Pull successful.
+2025-06-27 09:10:04 [INFO] __main__: INFO:httpx:HTTP Request: POST https://trading.vietcap.com.vn/api/chart/OHLCChart/gap "HTTP/1.1 200 OK"
+2025-06-27 09:10:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git status --porcelain (cwd=/apps/vnstockdata)
+2025-06-27 09:10:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Detected uncommitted changes. Staging & committing...
+2025-06-27 09:10:04 [INFO] __main__: INFO:helper.update_git:[GitPusher] Running: git add . (cwd=/apps/vnstockdata)
