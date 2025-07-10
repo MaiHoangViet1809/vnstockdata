@@ -2,7 +2,6 @@ from pytz import timezone
 import time
 from pathlib import Path
 import logging
-from datetime import datetime
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
