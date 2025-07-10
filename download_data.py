@@ -57,9 +57,9 @@ class DownloadVN30F(DownloadStock):
                          )
 
     def _get_symbol(self, **kwargs):
-        curr_date = kwargs.get("curr_date")
-        name_part = curr_date.strftime("%y%m")
-        return f"VN30F{name_part}"
+        from helper.date_calculate import krx_vn30f_code
+        curr_date: datetime = kwargs.get("curr_date")
+        return krx_vn30f_code(year=curr_date.year, month=curr_date.month)
 
     @timeit_ns # noqa
     def download(self, from_date_yyyymmdd: str = None, to_date_yyyymmdd: str = None):

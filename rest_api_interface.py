@@ -197,4 +197,3 @@ def save_historical_data(symbol: str, base_path: str = "./data", stock_service: 
                     logger.info(f"[DRU RUN] saving data to {output_path=}")
 
                 logger.info("-" * 20 + F" FINISH {d} " + "-" * 20)
-                
