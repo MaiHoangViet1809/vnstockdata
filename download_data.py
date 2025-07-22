@@ -36,6 +36,7 @@ class DownloadStock:
             curr_date += self.interval
 
     def api_call(self, symbol: str, curr_date: datetime, **kwargs):
+        print(self.__class__.__name__, "api_call", symbol, curr_date, kwargs)
         logger.info("--" + symbol + " " + curr_date.strftime("%Y-%m-%d") + "-" * 10)
         save_historical_data(
             symbol=symbol,
