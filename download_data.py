@@ -4,14 +4,13 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from rest_api_interface import save_historical_data
 from utils.timing import timeit_ns
+import logging
 
-from logging import Logger
-
-logger = Logger(name="download_data")
+logger = logging.getLogger(__name__)
 
 
 class DownloadStock:
-    def __init__(self, symbol: str, from_date_yyyymmdd: str, to_date_yyyymmdd: str, interval: str = relativedelta(days=1), dry_run = False):
+    def __init__(self, symbol: str, from_date_yyyymmdd: str, to_date_yyyymmdd: str, interval = relativedelta(days=1), dry_run = False):
         self.symbol = symbol
         self.start_date = datetime.strptime(from_date_yyyymmdd, "%Y%m%d")
         self.end_date = datetime.strptime(to_date_yyyymmdd, "%Y%m%d")
@@ -31,12 +30,10 @@ class DownloadStock:
 
         curr_date = self.start_date
         while curr_date <= self.end_date:
-            logger.info("-" + curr_date.strftime("%Y-%m") + "-" * 10)
             self.api_call(symbol=self._get_symbol(), curr_date=curr_date, base_path="data")
             curr_date += self.interval
 
     def api_call(self, symbol: str, curr_date: datetime, **kwargs):
-        print(self.__class__.__name__, "api_call", symbol, curr_date, kwargs)
         logger.info("--" + symbol + " " + curr_date.strftime("%Y-%m-%d") + "-" * 10)
         save_historical_data(
             symbol=symbol,
@@ -49,11 +46,10 @@ class DownloadStock:
 
 
 class DownloadVN30F(DownloadStock):
-    def __init__(self, from_date_yyyymmdd: str, to_date_yyyymmdd: str, interval: str = relativedelta(months=1), symbol="VN30F", dry_run = False):
+    def __init__(self, from_date_yyyymmdd: str, to_date_yyyymmdd: str, symbol="VN30F", dry_run = False):
         super().__init__(symbol=symbol,
                          from_date_yyyymmdd=from_date_yyyymmdd,
                          to_date_yyyymmdd=to_date_yyyymmdd,
-                         interval=interval,
                          dry_run=dry_run,
                          )
 
@@ -70,23 +66,34 @@ class DownloadVN30F(DownloadStock):
         if to_date_yyyymmdd:
             self.end_date = datetime.strptime(to_date_yyyymmdd, "%Y%m%d")
 
-        curr_month = self.start_date
-        while curr_month <= self.end_date:
-            logger.info("-" + curr_month.strftime("%Y-%m") + "-" * 10)
+        current_month = self.get_current_month(self.start_date)
+        date_range_to_run = self.get_date_range_current_month(current_month_yyyymm=current_month)
+        for date_to_run in date_range_to_run:
+            self.api_call(symbol=self._get_symbol(curr_date=datetime.strptime(current_month, "%Y%m")), curr_date=date_to_run, base_path="data/VN30F")
 
-            prev_month = curr_month + relativedelta(months=-1)
+    @staticmethod
+    def datetime_range(start: datetime,
+                       end: datetime,
+                       ) -> list[datetime]:
+        """Daily datetimes between start and end (inclusive), forwards or backwards."""
+        days = (end.date() - start.date()).days
+        step = 1 if days >= 0 else -1
+        return [start + relativedelta(days=step * i) for i in range(abs(days) + 1) if (start + relativedelta(days=step * i)).weekday() < 5]
 
-            start_date = third_thursday(prev_month.year, prev_month.month) + relativedelta(days=1)
-            end_date = third_thursday(curr_month.year, curr_month.month) + relativedelta(days=0)
-            curr_date = max(start_date, self.start_date)
+    @staticmethod
+    def get_current_month(run_date: datetime):
+        date_end_vn30_contract = third_thursday(run_date.year, run_date.month)
+        run_month = (run_date + relativedelta(months=1 if run_date > date_end_vn30_contract else 0)).strftime("%Y%m")
+        return run_month
 
-            while curr_date <= end_date and curr_date <= self.end_date:
-                if curr_date.weekday() < 5:
-                    self.api_call(symbol=self._get_symbol(curr_date=curr_month), curr_date=curr_date, base_path="data/VN30F")
+    def get_date_range_current_month(self, current_month_yyyymm: str):
+        current_month = datetime.strptime(current_month_yyyymm, "%Y%m")
+        prev_month = current_month + relativedelta(months=-1)
 
-                curr_date += relativedelta(days=1)
+        start_date = third_thursday(prev_month.year, prev_month.month) + relativedelta(days=1)
+        end_date = min(third_thursday(current_month.year, current_month.month) + relativedelta(days=0), self.end_date)
 
-            curr_month += self.interval
+        return self.datetime_range(start=start_date, end=end_date)
 
 
 class DownloadStockFactory:

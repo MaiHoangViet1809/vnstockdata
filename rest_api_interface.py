@@ -194,6 +194,6 @@ def save_historical_data(symbol: str, base_path: str = "./data", stock_service: 
                     df_write.write_parquet(file=output_path, partition_by=["stock_date"])
                 else:
                     logger.info(f"[DRY RUN] rm -rf {output_path}/stock_date={d.strftime('%Y-%m-%d')}")
-                    logger.info(f"[DRU RUN] saving data to {output_path=}")
+                    logger.info(f"[DRY RUN] saving data to {output_path=}")
 
                 logger.info("-" * 20 + F" FINISH {d} " + "-" * 20)
