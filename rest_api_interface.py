@@ -94,17 +94,18 @@ class CandleFetcher(DataFetcher):
     ENDPOINT = "https://trading.vietcap.com.vn/api/chart/OHLCChart/gap"
 
     def __init__(self, symbol: str,
-                 dt_from: datetime, dt_to: datetime):
+                 dt_from: datetime, dt_to: datetime, time_frame: str = "ONE_MINUTE"):
         self.symbol = symbol
         self.dt_from = dt_from
         self.dt_to = dt_to
+        self.time_frame = time_frame
 
     def endpoint_url(self) -> str:
         return self.ENDPOINT
 
     def build_payload(self) -> dict:
         return {
-            "timeFrame": "ONE_MINUTE",
+            "timeFrame": self.time_frame,
             "symbols": [self.symbol],
             "from": int(self.dt_from.timestamp()),
             "to":   int(self.dt_to.timestamp()),
@@ -169,7 +170,7 @@ class StockService:
 # print_table(pd.DataFrame(data[0]), 1000)
 
 
-@timeit_ns
+@timeit_ns # noqa
 def save_historical_data(symbol: str, base_path: str = "./data", stock_service: StockService = None, dry_run = False, **kwargs):
     if not stock_service:
         stock_service = StockService()
